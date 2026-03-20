@@ -1,4 +1,4 @@
-# black-pink-hypr
+# black-hypr
 ## Скриншоты
 
 #### Терминал
