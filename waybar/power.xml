@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <object class="GtkMenu" id="menu">
+    <style>
+      <class name="tight-menu"/>
+    </style>
+    <child>
+		<object class="GtkMenuItem" id="v">
+			<property name="label">󰤆    Выключение</property>
+        </object>
+	</child>
+	<child>
+        <object class="GtkMenuItem" id="p">
+			<property name="label">󰑐    Перезагрузка</property>
+        </object>
+	</child>
+	<child>
+        <object class="GtkMenuItem" id="pa">
+			<property name="label">󰏤    Пауза</property>
+        </object>
+    </child>
+    <child>
+        <object class="GtkMenuItem" id="g">
+			<property name="label">󰰶    Гибернация</property>
+        </object>
+    </child>
+    <child>
+        <object class="GtkMenuItem" id="b">
+			<property name="label">    Блокировка</property>
+        </object>
+    </child>
+    <child>
+        <object class="GtkMenuItem" id="vy">
+			<property name="label">󰍃    Выход</property>
+        </object>
+    </child>
+
+  </object>
+</interface>

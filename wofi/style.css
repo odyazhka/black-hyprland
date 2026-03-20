@@ -1,0 +1,49 @@
+
+    #window {
+        background-color: rgba(0, 0, 0, 0.90);
+        border: 3px solid rgba(252, 0, 239, 0.999);
+        margin-right: 200px;
+        border-radius: 0px;
+        font-family: "PixelLocale v.1.4";
+        font-size: 16px;
+        margin-bottom: 400px;
+    }
+
+    /*
+    #outer-box {
+        background-color: rgba(20, 20,20, 0.7);
+        border: 1px solid rgba(255, 0, 0, 0.5);
+    }*/
+
+    #input {
+    	location: bottom;
+        border: 3px solid rgba(100, 100, 100, 0.666);
+        border-radius: 0px;
+		box-shadow: none;
+        margin-left: 33px;
+        margin-right: 33px;
+        margin-top: 10px;
+        margin-bottom: 25px;flex-direction: column-reverse;
+        background-color: rgba(0, 0, 0, 0.01);
+    }
+
+    #input:focus {
+        color: #999999;
+        border: 3px solid rgba(252, 0, 239, 1);
+        box-shadow: none;
+        background-color: rgba(0, 0, 0, 0.01);
+    }
+
+    #entry {
+        border-radius: 0px;
+        margin: 5px;
+        margin-right: 33px;
+        margin-left: 33px;
+        padding-left: 10px;
+    }
+
+    #entry:focus {
+        background: rgba(252, 0, 239, 0.99);
+        border: 1px solid rgba(0, 0, 0, 0.666));
+
+    }

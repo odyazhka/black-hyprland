@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <object class="GtkMenu" id="menu">
+    <style>
+      <class name="tight-menu"/>
+    </style>
+    <child>
+		<object class="GtkMenuItem" id="nmtui">
+			<property name="label">󰖟    Интернет</property>
+        </object>
+	</child>
+	<child>
+        <object class="GtkMenuItem" id="blue">
+			<property name="label">     Блютуз</property>
+        </object>
+	</child>
+    <child>
+        <object class="GtkMenuItem" id="ping">
+			<property name="label">󰊭    Пинг</property>
+        </object>
+    </child>
+  </object>
+</interface>

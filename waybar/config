@@ -1,0 +1,147 @@
+[
+  {
+    "layer": "top",
+    "position": "top",
+    "height": 24,
+
+    "modules-left": [
+      "custom/launcher",
+      "hyprland/window",
+    ],
+    "modules-center": [
+      "sway/window",
+      "custom/cava"
+    ],
+    "modules-right": [
+      "tray",
+      "custom/inet",
+      "pulseaudio",
+      "backlight",
+      "keyboard-state",
+      "battery",
+      "battery#bat2",
+      "hyprland/language",
+      "custom/clock",
+      "custom/clock1",
+      "custom/power",
+    ],
+
+    "custom/inet": {
+      "format" : " ",
+      "tooltip": false,
+      "menu": "on-click",
+      "menu-file": "~/.config/waybar/inet.xml",
+      "menu-actions": {
+          "nmtui": "kitty --class nmtui nmtui",
+          "ping": "kitty --class ping gping google.com",
+          "blue": "blueman-manager",
+      },
+    },
+
+    "custom/power": {
+      "format" : "󰤆 ",
+      "tooltip": false,
+      "menu": "on-click",
+      "menu-file": "~/.config/waybar/power.xml",
+      "menu-actions": {
+        "v": "systemctl poweroff",
+        "p": "systemctl reboot",
+	    "g": "systemctl hibernate",
+	    "b": "hyprlock",
+	    "vy": "loginctl terminate-user $USER",
+	    "pa": "systemctl suspend",
+      },
+    },
+
+    "hyprland/window": {
+      "format": "  {class}",
+      "max-length": 20,
+      "rewrite": {
+        "^(?!.*\\S).*": " "
+      }
+    },
+    "custom/launcher": {
+      "format": " \udb82\udcc7 ",
+      "on-click": "wofi --show drun --width 33% --height 50% --location 1",
+      "tooltip": false
+    },
+
+    "tray": {
+    },
+    "custom/clock": {
+      "interval": 60,
+      "exec": "LC_TIME=ru_RU.UTF-8 date '+%a, %d %b'",
+    },
+    "custom/clock1": {
+      "interval": 60,
+      "exec": "LC_TIME=ru_RU.UTF-8 date '+%H:%M'",
+    },
+    "backlight": {
+      "format": "{icon} {percent}%",
+      "format-icons": [
+        "󰄰",
+        "󰪞",
+        "󰪟",
+        "󰪠",
+        "󰪡",
+        "󰪢",
+        "󰪣",
+        "󰪤",
+        "󰪥"
+      ]
+    },
+    "battery": {
+      "states": {
+        "warning": 30,
+        "critical": 15
+      },
+      "format": "{icon} {capacity}%",
+      "format-charging": " {capacity}%",
+      "format-plugged": " {capacity}%",
+      "format-alt": "{icon} {tim e}",
+      "format-icons": [
+        "󰁺",
+        "󰁻",
+        "󰁼",
+        "󰁽",
+        "󰁾",
+        "󰁿",
+        "󰂀",
+        "󰂂",
+        "󰁹",
+      ]
+    },
+    "battery#bat2": {
+      "bat": "BAT2"
+    },
+    "pulseaudio": {
+      "scroll-step": 5,
+      "format": "{icon} {volume}%",
+      "format-bluetooth": " {icon} {volume}% {format_source}",
+      "format-bluetooth-muted": "  {icon} {format_source}",
+      "format-icons": {
+        "default": [
+          "✕",
+          "▁",
+          "▂",
+          "▃",
+          "▄",
+          "▅",
+          "▆",
+          "▇",
+          "█"
+        ]
+      },
+    },
+    "hyprland/language": {
+        "format": "{}",
+    	"format-en": " EN ",
+    	"format-ru": " РУС ",
+    	"on-click": ""
+	},
+    "custom/cava": {
+      "exec": "cava -p ~/.config/cava/config_waybar | sed -u 's/0/  /g; s/1/▂▂/g; s/2/▃▃/g; s/3/▄▄/g; s/4/▅▅/g; s/5/▆▆/g; s/6/▇▇/g; s/7/██/g'",
+      "format": "{}"
+    }
+  }
+]
