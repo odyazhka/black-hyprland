@@ -65,7 +65,7 @@ ctrl+alt+del панель wlogout
 
 #### 1. Установить необходимые пакеты:
 ```
-sudo pacman -S wofi waybar kitty hyprlock gping blueman cava htop grimblast yay 
+sudo pacman -S hypridle wofi waybar kitty hyprlock gping blueman cava htop grimblast yay 
 yay -S wlogout
 ```
 
