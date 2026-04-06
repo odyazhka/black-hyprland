@@ -24,16 +24,5 @@
 			<property name="label">󰰶    Гибернация</property>
         </object>
     </child>
-    <child>
-        <object class="GtkMenuItem" id="b">
-			<property name="label">    Блокировка</property>
-        </object>
-    </child>
-    <child>
-        <object class="GtkMenuItem" id="vy">
-			<property name="label">󰍃    Выход</property>
-        </object>
-    </child>
-
   </object>
 </interface>
