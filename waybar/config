@@ -5,7 +5,7 @@
     "height": 24,
 
     "modules-left": [
-      "custom/launcher",
+      "group/expandable",
       "hyprland/window",
     ],
     "modules-center": [
@@ -23,9 +23,32 @@
       "hyprland/language",
       "custom/clock",
       "custom/clock1",
-      "custom/power",
     ],
 
+    "group/expandable": {
+    "orientation": "horizontal",
+    "drawer": {
+        "transition-duration": 200, // Скорость анимации в мс
+        "children-class": "not-expanded", // Класс для скрытых элементов
+        "transition-left-to-right": true
+    },
+    "modules": [
+        "custom/launcher", // Эта кнопка видна всегда
+        "group/expandable1",
+    ]
+},
+    "group/expandable1": {
+    "orientation": "horizontal",
+    "drawer": {
+        "transition-duration": 200, // Скорость анимации в мс
+        "children-class": "not-expanded", // Класс для скрытых элементов
+        "transition-left-to-right": true
+    },
+    "modules": [
+        "custom/power",
+        "custom/power1",
+    ]
+},
     "custom/inet": {
       "format" : " ",
       "tooltip": false,
@@ -47,9 +70,20 @@
         "v": "systemctl poweroff",
         "p": "systemctl reboot",
 	    "g": "systemctl hibernate",
-	    "b": "hyprlock",
-	    "vy": "loginctl terminate-user $USER",
 	    "pa": "systemctl suspend",
+      },
+    },
+    "custom/power1": {
+      "format" : " ",
+      "tooltip": false,
+      "menu": "on-click",
+      "menu-file": "~/.config/waybar/power1.xml",
+      "menu-actions": {
+	    "vy": "loginctl terminate-user $USER",
+	    "b": "hyprlock",
+	    "o": "kitty --hold sudo pacman -Scc --noconfirm; paccache -r --noconfirm; yay -Scc --noconfirm; rm -rf ~/.cahce/* --noconfirm; echo 'ok';  read",
+	    "t": "hyprctl dispatch exit",
+	    "d": "kitty htop",
       },
     },
 
@@ -62,11 +96,13 @@
     },
     "custom/launcher": {
       "format": " \udb82\udcc7 ",
-      "on-click": "wofi --show drun --width 33% --height 50% --location 1",
+      "on-click": "wofi --show drun --width 30% --height 50% --location 1",
       "tooltip": false
     },
 
     "tray": {
+    "icon-size": 18,
+    "spacing": 7
     },
     "custom/clock": {
       "interval": 60,
@@ -96,7 +132,7 @@
         "critical": 15
       },
       "format": "{icon} {capacity}%",
-      "format-charging": " {capacity}%",
+      "format-charging": "⬆ {capacity}%",
       "format-plugged": " {capacity}%",
       "format-alt": "{icon} {tim e}",
       "format-icons": [
